@@ -130,7 +130,7 @@ dmypy.json
 
 # config
 *.yaml
-!sample_config.yaml
+!sample_*
 
 # runs
 runs/

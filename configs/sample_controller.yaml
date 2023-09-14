@@ -1,0 +1,14 @@
+run_name: "sample_controller"
+seed: 0 # Seed of the experiment
+torch_deterministic: True # If toggled, `torch.backends.cudnn.deterministic=False`
+cuda: False # If toggled, cuda will be enabled by default
+method: method_name # Method used (only meant for logging purposes).
+reward: linear # Reward used (only meant for logging purposes).
+controller:
+  name: Eplus-datacenter-hot-continuous-v1 # Environment to be ran on
+  total_timesteps: 500_000 # Total timesteps of the experiment
+  log_interval: 1000
+wandb:
+  project: project_name
+  entity: entity_name
+  api_key: api_key

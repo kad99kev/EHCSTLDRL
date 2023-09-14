@@ -1,0 +1,36 @@
+run_name: "sample_sac"
+seed: 0 # Seed of the experiment
+torch_deterministic: True # If toggled, `torch.backends.cudnn.deterministic=False`
+cuda: False # If toggled, cuda will be enabled by default
+method: method_name # Method used (only meant for logging purposes).
+reward: linear # Reward used (only meant for logging purposes).
+reward: linear # Reward used (only meant for logging purposes).
+train:
+  name: [Eplus-5Zone-cool-continuous-v1] # Environment to be trained on
+  model: # If using transfer learning
+    path: pretrained_path # Path of pretrained model
+    env_trained: Eplus-5Zone-hot-continuous-v1 # If input and output layers have to be reset, then provide orignal env name
+wandb:
+  project: project_name
+  entity: entity_name
+  api_key: api_key
+agent:
+  algorithm: "ppo" # To identify which algorithm
+  checkpoint_freq: 100 # After how many updates (total_ts // batch_size) to save
+  layers: [64, 128, 64] # Intermediate layers
+  hyperparams:
+    total_timesteps: 500_000 # Total timesteps of the experiment
+    learning_rate: 3.0e-4 # The learning rate of the optimizer
+    num_steps: 2048 # The number of steps to run in each environment per policy rollout
+    anneal_lr: True # Toggle learning rate annealing for policy and value networks
+    gamma: 0.99 # The discount factor gamma
+    gae_lambda: 0.95 # The lambda for the general advantage estimation
+    num_minibatches: 32 # The number of mini-batches
+    update_epochs: 10 # The K epochs to update the policy
+    norm_adv: True # Toggles advantages normalization
+    clip_coef: 0.2 # The surrogate clipping coefficient
+    clip_vloss: True # Toggles whether or not to use a clipped loss for the value function, as per the paper
+    ent_coef: 0.0 # Coefficient of the entropy
+    vf_coef: 0.5 # Coefficient of the value function
+    max_grad_norm: 0.5 # The maximum norm for the gradient clipping
+    target_kl: null # The target KL divergence threshold
