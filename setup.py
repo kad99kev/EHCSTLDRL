@@ -6,6 +6,7 @@ requirements = [
     "torch",
     "tensorboard",
     "sinergym==2.3.2",
+    "stable_baselines3"
 ]
 
 setup(
