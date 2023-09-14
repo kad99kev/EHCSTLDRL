@@ -9,7 +9,7 @@ requirements = [
 ]
 
 setup(
-    name="transfer-sinergym",
+    name="ehcs",
     licence="MIT",
     version="0.1",
     url="https://github.com/kad99kev/EHCSTLDRL",
