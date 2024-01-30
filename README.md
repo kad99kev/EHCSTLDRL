@@ -1,5 +1,7 @@
 # Enhancing HVAC Control Systems through Transfer Learning with Deep Reinforcement Learning Agents
 
+Link to Research - https://www.sciencedirect.com/science/article/pii/S2666955224000017
+
 ## Installation
 
 In a conda environment, run the following code.
